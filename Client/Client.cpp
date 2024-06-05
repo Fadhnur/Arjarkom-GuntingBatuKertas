@@ -66,8 +66,13 @@ int main() {
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT);
 
+    string serverIP;
+    cout << "Masukkan server IP Address: ";
+    cin >> serverIP;
+
+
     // Mengkonversi alamat IPv4 dan IPv6 dari teks ke biner
-    if (InetPton(AF_INET, "192.168.1.2", &serv_addr.sin_addr) <= 0) {
+    if (InetPton(AF_INET, serverIP.c_str(), &serv_addr.sin_addr) <= 0) {
         cerr << "Invalid address/ Address not supported" << endl;
         closesocket(sock);
         WSACleanup();
