@@ -67,7 +67,7 @@ int main() {
     serv_addr.sin_port = htons(PORT);
 
     // Mengkonversi alamat IPv4 dan IPv6 dari teks ke biner
-    if (InetPton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0) {
+    if (InetPton(AF_INET, "192.168.1.2", &serv_addr.sin_addr) <= 0) {
         cerr << "Invalid address/ Address not supported" << endl;
         closesocket(sock);
         WSACleanup();
